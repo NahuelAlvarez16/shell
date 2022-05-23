@@ -1,2 +1,2 @@
-#Shell Project
-###Holberton School
+Project Shell
+Holberton School
