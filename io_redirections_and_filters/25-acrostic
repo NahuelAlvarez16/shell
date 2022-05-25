@@ -1,2 +1,2 @@
 #!/bin/bash
-cat | cut -d" " -f1 | head -n1 | tr [a-z] [A-Z]
+cat | cut -c 1 | tr -d "\n"
