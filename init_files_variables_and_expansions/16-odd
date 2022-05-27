@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -n | grep -v '[2,4,6,8,9] ' | tr -s ' ' | cut -d ' ' -f 2- | cut -f 2 
+cat -n | grep -i "[2,4,6,8,0] *" | tr -s ' ' | cut -d ' ' -f 2- | cut -f 2  
