@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(compgen -v) 
+echo $(set -o posix ; set)
