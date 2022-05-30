@@ -9,9 +9,11 @@ do
 			echo "FizzBuzz" 
 			x=35
 		elif [[ $i == $((x*3)) ]]; then
-			echo "Fizz" 
+			echo "Fizz"
+		       	x=35	
 		elif [[ $i == $((x*5)) ]]; then
 			echo "Buzz"
+			x=35
 		elif [[ $x == 34 ]]; then
 			echo $i
 		fi
