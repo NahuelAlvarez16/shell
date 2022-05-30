@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# FizzBuzz
+for i in {1..100}
+do	
+	x=0
+	while [[ x -lt 35 ]]
+	do
+		if [[ $i == $((x*3*5)) ]]; then
+			echo "FizzBuzz" 
+			x=35
+		elif [[ $i == $((x*3)) ]]; then
+			echo "Fizz" 
+		elif [[ $i == $((x*5)) ]]; then
+			echo "Buzz"
+		elif [[ $x == 34 ]]; then
+			echo $i
+		fi
+		((x++))
+	done
+	((i++))
+done
