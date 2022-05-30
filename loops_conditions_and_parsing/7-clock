@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 #Displays "Best School" for 10 times
 hour=1
-for i in {1..779}
+i=0
+while [ $i -lt 779 ]
 do
+	((i++))
 	if((hour*60 == i)); then
 	echo "Hour: $hour";
 	((hour++))
