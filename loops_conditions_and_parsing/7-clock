@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #Displays "Best School" for 10 times
-hour=1
+hour=0
 i=0
-while [ $i -lt 779 ]
+while [ $i -lt 780 ]
 do
-	((i++))
 	if((hour*60 == i)); then
 	echo "Hour: $hour";
 	((hour++))
 	else
 		echo $((i-60*(hour-1)))
 	fi
+	((i++))
 done
