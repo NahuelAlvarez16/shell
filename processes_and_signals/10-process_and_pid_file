@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Displays To infinity and beyond indefinitely.
+trap "echo 'I hate the kill command' | rm /var/run/myscript.pid" 15
+trap "echo 'Y U no love me?' | rm /var/run/myscript.pid" INT
+while true ; do
+	echo "To infinity and beyond"
+	sleep 2
+done
+
