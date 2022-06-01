@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #Displays To infinity and beyond indefinitely.
 echo $$ > /var/run/myscript.pid
-trap "rm /var/run/myscript.pid | echo 'I hate the kill command'; exit 1" 15
-trap "echo 'Y U no love me?'" 9
-trap "rm /var/run/myscript.pid; exit 1" 3 
+trap "rm /var/run/myscript.pid | echo 'I hate the kill command'; exit" SIGTERM
+trap "echo 'Y U no love me?'" SIGINT
+trap "rm /var/run/myscript.pid; exit" SIGQUIT
 while true ; do
 	echo "To infinity and beyond"
 	sleep 2
