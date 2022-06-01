@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Displays the PID, along with the process name, of processes whose name contain the word bash
+grep -r bash  /proc/[[:digit:]]*/comm | cut -d / -f 3- | sed "s/comm://" | tr / ' '
