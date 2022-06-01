@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 #Displays To infinity and beyond indefinitely.
 echo $$ > /var/run/myscript.pid
-trap "echo 'I hate the kill command'; exit" SIGTERM
+function removeMyScript() {
+	rm /var/run/myscript.pid
+	exit
+}
+trap "echo 'I hate the kill command'; removeMyScript" SIGTERM
 trap "echo 'Y U no love me?'" SIGINT
 while true ; do
 	echo "To infinity and beyond"
 	sleep 2
-	trap "rm /var/run/myscript.pid; exit" SIGQUIT || SIGTERM || SIGINT
+	trap "rm /var/run/myscript.pid; removeMyScript" SIGQUIT || SIGTERM
 done
 
