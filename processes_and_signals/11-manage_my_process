@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
-#Displays To infinity and beyond indefinitely.
-echo $$ > /var/run/myscript.pid
-trap "su rm /var/run/myscript.pid | echo 'I hate the kill command'; exit" SIGTERM
-trap "echo 'Y U no love me?'" SIGINT
-trap "su rm /var/run/myscript.pid; exit" SIGQUIT
-while true ; do
-	echo "To infinity and beyond"
-	sleep 2
-done
-
+#Manage my process
+case $1 in
+	start)
+		./manage_my_process & echo $! > /var/run/my_process.pid
+		echo "manage_my_process started"
+		;;
+	restart)
+	 	kill $(less /var/run/my_process.pid) 
+		./manage_my_process & echo $! > /var/run/my_process.pid
+		echo "manage_my_process restarted"
+		 ;;
+	stop)
+		kill $(less /var/run/my_process.pid)
+		rm /var/run/my_process.pid
+		echo "manage_my_process stopped"
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+		;;
+esac
